@@ -1,13 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ```mortgager```
+# mortgager
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-This package obtains various values such as monthly mortgage payment amounts, downpayment amounts, minimum income required for affordable home-ownership etc.
+This package obtains various values such as monthly mortgage payment
+amounts, downpayment amounts, minimum income required for affordable
+home-ownership etc.
 
 ## Installation
 
@@ -17,7 +19,7 @@ You can install the released version of mortgager with:
 devtools::install_github("aseemdeodhar/mortgager")
 ```
 
-## ```mortgager```
+## mortgager
 
 Load the  package with this line:
 
@@ -27,9 +29,10 @@ library(mortgager)
 
 ## Examples for each function:
 
-### ```mortgager::monthlypayment()```
+### mortgager::monthlypayment()
 
-This function calculates monthly home-ownership costs based on tax rates, interest rates, downpayment amount, and home cost price.
+calculates monthly home-ownership costs based on tax rates, interest
+rates, downpayment amount, and home cost price.
 
 ``` r
 monthlypayment(mortgage_rate = 3,
@@ -38,9 +41,10 @@ monthlypayment(mortgage_rate = 3,
 #> [1] 3308.015
 ```
 
-### ```mortgager::max\_homeprice()```
+### mortgager::max\_homeprice()
 
-This function calculates maximum affordable home price based on annual income with a set monthly housing cost percentage (default is 30%).
+calculates maximum affordable home price based on annual income with a
+set monthly housing cost percentage (default is 30%).
 
 ``` r
 max_homeprice(annualinc = c(61000, 75000, 22330, 120000),
@@ -55,9 +59,10 @@ max_homeprice(annualinc = c(61000, 75000, 22330, 120000),
 #> 4       120000  453471. 362777. 544166.
 ```
 
-### ```mortgager::downpayment()```
+### mortgager::downpayment()
 
-This function calculates the total downpayment amount based on sale price and mortgage amount.
+calculates the total downpayment amount based on sale price and mortgage
+amount.
 
 ``` r
 downpayment(home_price = 250000,
@@ -65,9 +70,9 @@ downpayment(home_price = 250000,
 #> [1] 25000
 ```
 
-### ```mortgager::min\_anninc()```
+### mortgager::min\_anninc()
 
-This function calculates the minimum annual income required for total housing costs to
+calculates the minimum annual income required for total housing costs to
 remain at or below 30% of household income.
 
 ``` r
@@ -75,9 +80,9 @@ min_anninc(2000)
 #> [1] 80000
 ```
 
-### ```mortgager::burd\_anninc()```
+### mortgager::burd\_anninc()
 
-This function calculates the minimum annual income required for total housing costs to
+calculates the minimum annual income required for total housing costs to
 remain at or below 50% of household income.
 
 ``` r

@@ -32,14 +32,13 @@ max_homeprice <- function(mortgage_rate,
                       pmi_factor = 7.5) {
   max_monthly_amt = (annualinc * max_monthly_rate)/12
   monthly_hoins = homeowners_ins/12
-  homeprice = (max_monthly_amt - monthly_hoins)/( property_tax/12000 + mortgage_amount * (((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1))) * (1 + pmi_factor/12) )
+  homeprice = ifelse(mortgage_amount > 0.80, (max_monthly_amt - monthly_hoins)/( property_tax/12000 + mortgage_amount * (((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1))) * (1 + pmi_factor/12) ), (max_monthly_amt - monthly_hoins)/( property_tax/12000 + mortgage_amount * (((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1))) * (1 + 0/12) ))
   max_homeprice = tibble::tibble(income_level = annualinc,
                                  atincome = homeprice,
                                  at80pc = homeprice*0.80,
                                  at120pc = homeprice*1.20)
   return(max_homeprice)
 }
-
 
 
 # pc_inc <- readr::read_csv("D:/Work/00_MAPC/ACSST5Y2019.S1901_2020-12-21T130325/ACSST5Y2019.S1901_data_with_overlays_2020-12-21T130321.csv")

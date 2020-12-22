@@ -30,6 +30,6 @@ monthlypayment <- function(mortgage_rate,
   monthly_mortgage = ((home_price*mortgage_amount)*((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1)))
   monthly_hoins = (homeowners_ins/12)
   monthly_pmifactor = (monthly_mortgage*(pmi_factor/12))
-  monthlypayments = monthly_proptax+monthly_mortgage+monthly_hoins+monthly_pmifactor
+  monthlypayments = ifelse(mortgage_amount > 0.80,monthly_proptax+monthly_mortgage+monthly_hoins+monthly_pmifactor, monthly_proptax+monthly_mortgage+monthly_hoins )
   return(monthlypayments)
 }
