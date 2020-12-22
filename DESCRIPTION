@@ -1,0 +1,17 @@
+Package: mortgager
+Title: Obtain various values required in Home Mortgage Calculations
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Aseem",
+           family = "Deodhar",
+           role = c("aut", "cre"),
+           email = "aseemvdeodhar@gmail.com")
+Description: This package obtains various values such as monthly mortgage payments, downpayments, minimum income required for affordable home-ownership etc when it comes to buying a house.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: tibble
+Suggests: 
+    testthat
