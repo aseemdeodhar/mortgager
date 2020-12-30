@@ -8,9 +8,9 @@
 #' @param home_price Sale Price of property in question
 #' @param homeowners_ins Annual home owners insurance costs (default: 1000)
 #' @param condo_fee Annual condo fee (default: 1000)
-#' @param mortgage_amount Mortgage as a proportion (out of 1) of sale price (default: 0.90)
 #' @param loan_term Duration of loan payback time in years (default: 30)
 #' @param pmi_factor For loans with less than 20% downpayment, mortgage insurance rate in percent (out of 100) (default: 7.5)
+#' @param downpayment_rate Downpayment as a proportion (out of 1) of sale price (default: 0.10)
 #'
 #' @export
 #'
@@ -23,14 +23,14 @@ monthlypayment <- function(mortgage_rate,
                            home_price,
                            homeowners_ins = 1000,
                            condo_fee = 1000,
-                           mortgage_amount = 0.90,
+                           downpayment_rate = 0.10,
                            loan_term = 30,
                            pmi_factor = 7.5) {
   monthly_proptax = (home_price*(property_tax/12000))
-  monthly_mortgage = ((home_price*mortgage_amount)*((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1)))
+  monthly_mortgage = ((home_price*downpayment_rate)*((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1)))
   monthly_hoins = (homeowners_ins/12)
   monthly_pmifactor = (monthly_mortgage*(pmi_factor/12))
-  monthlypayments = dplyr::case_when(mortgage_amount > 0.8 ~ monthly_proptax + monthly_mortgage + monthly_hoins + monthly_pmifactor,
-                                     mortgage_amount <= 0.8 ~ monthly_proptax + monthly_mortgage + monthly_hoins)
+  monthlypayments = dplyr::case_when(downpayment_rate < 0.20 ~ monthly_proptax + monthly_mortgage + monthly_hoins + monthly_pmifactor,
+                                     downpayment_rate >= 0.20 ~ monthly_proptax + monthly_mortgage + monthly_hoins)
   return(monthlypayments)
 }

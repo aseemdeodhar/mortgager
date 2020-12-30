@@ -40,7 +40,7 @@ library(mortgager)
 
 ### mortgager::monthlypayment()
 
-\code{monthlypayment} calculates monthly home-ownership costs based on tax rates, interest rates, downpayment amount, and home cost price.
+\code{monthlypayment} calculates monthly home-ownership costs based on tax rates, interest rates, downpayment rate, and home cost price.
 
 ```{r}
 monthlypayment(mortgage_rate = 3,
@@ -60,11 +60,11 @@ max_homeprice(annualinc = c(61000, 75000, 22330, 120000),
 
 ### mortgager::downpayment()
 
-\code{downpayment} calculates the total downpayment amount based on sale price and mortgage amount.
+\code{downpayment} calculates the total downpayment amount based on sale price and downpayment rate
 
 ```{r}
 downpayment(home_price = 250000,
-            mortgage_amount = 0.90)
+            downpayment_rate = 0.10)
 ```
 
 ### mortgager::min_anninc()

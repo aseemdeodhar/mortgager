@@ -1,6 +1,6 @@
 Package: mortgager
 Title: Obtain various values required in Home Mortgage Calculations
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: 
     person(given = "Aseem",
            family = "Deodhar",

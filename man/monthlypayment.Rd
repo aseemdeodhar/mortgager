@@ -10,7 +10,7 @@ monthlypayment(
   home_price,
   homeowners_ins = 1000,
   condo_fee = 1000,
-  mortgage_amount = 0.9,
+  downpayment_rate = 0.1,
   loan_term = 30,
   pmi_factor = 7.5
 )
@@ -27,7 +27,7 @@ NOTE: Generally property taxes are always mentioned per thousand}
 
 \item{condo_fee}{Annual condo fee (default: 1000)}
 
-\item{mortgage_amount}{Mortgage as a proportion (out of 1) of sale price (default: 0.90)}
+\item{downpayment_rate}{Downpayment as a proportion (out of 1) of sale price (default: 0.10)}
 
 \item{loan_term}{Duration of loan payback time in years (default: 30)}
 
