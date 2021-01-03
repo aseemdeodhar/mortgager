@@ -27,7 +27,7 @@ monthlypayment <- function(mortgage_rate,
                            loan_term = 30,
                            pmi_factor = 7.5) {
   monthly_proptax = (home_price*(property_tax/12000))
-  monthly_mortgage = ((home_price*downpayment_rate)*((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1)))
+  monthly_mortgage = ((home_price*(1-downpayment_rate))*((mortgage_rate/1200)*((1+(mortgage_rate/1200))^(12*loan_term))/(((1+mortgage_rate/1200)^(12*loan_term))-1)))
   monthly_hoins = (homeowners_ins/12)
   monthly_pmifactor = (monthly_mortgage*(pmi_factor/12))
   monthlypayments = dplyr::case_when(downpayment_rate < 0.20 ~ monthly_proptax + monthly_mortgage + monthly_hoins + monthly_pmifactor,
