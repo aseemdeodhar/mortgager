@@ -32,13 +32,14 @@ library(mortgager)
 ### mortgager::monthlypayment()
 
 calculates monthly home-ownership costs based on tax rates, interest
-rates, downpayment amount, and home cost price.
+rates, downpayment rate, and home cost price.
 
 ``` r
 monthlypayment(mortgage_rate = 3,
                property_tax = 12,
+               downpayment_rate = .2,
                home_price = 450000)
-#> [1] 3308.015
+#> [1] 2051.108
 ```
 
 ### mortgager::max\_homeprice()
@@ -59,33 +60,50 @@ max_homeprice(annualinc = c(61000, 75000, 22330, 120000),
 #> 4       120000  453471. 362777. 544166.
 ```
 
-### mortgager::downpayment()
+### mortgager::downpayment\_amt()
 
-calculates the total downpayment amount based on sale price and mortgage
-amount.
+calculates the total downpayment amount based on sale price and
+downpayment rate
 
 ``` r
-downpayment(home_price = 250000,
-            mortgage_amount = 0.90)
-#> [1] 25000
+downpayment_amt(home_price = 250000,
+                downpayment_rate = 0.10)
+#> [1] 225000
 ```
 
-### mortgager::min\_anninc()
+### mortgager::min\_income()
+
+*To be deprecated. Use reqd\_income() instead, and specify monthly cost
+rate*
 
 calculates the minimum annual income required for total housing costs to
 remain at or below 30% of household income.
 
 ``` r
-min_anninc(2000)
+min_income(2000)
 #> [1] 80000
 ```
 
-### mortgager::burd\_anninc()
+### mortgager::burd\_income()
+
+*To be deprecated. Use reqd\_income() instead, and specify monthly cost
+rate*
 
 calculates the minimum annual income required for total housing costs to
 remain at or below 50% of household income.
 
 ``` r
-burd_anninc(2000)
+burd_income(2000)
 #> [1] 48000
+```
+
+### mortgager::reqd\_income()
+
+calculates the minimum annual income required for total housing costs to
+remain at or below a set proportion of household income.
+
+``` r
+reqd_income(monthlypayment = 2000,
+            housing_cost_rate = 0.30)
+#> [1] 80000
 ```
