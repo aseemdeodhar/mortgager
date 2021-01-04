@@ -15,6 +15,11 @@ Minimum Annual Income required to keep \code{monthlypayment} at or below 30\% of
 \description{
 Minimum annual income required for total housing costs to remain at or below 30\% of household income:
 }
+\details{
+\itemize{
+\item To be deprecated. Use reqd_income() instead *
+}
+}
 \examples{
 
 min_income(2000)
