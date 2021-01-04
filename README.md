@@ -37,7 +37,7 @@ rates, downpayment rate, and home cost price.
 ``` r
 monthlypayment(mortgage_rate = 3,
                property_tax = 12,
-               downpayment_rate = .2,
+               downpayment_rate = 0.2,
                home_price = 450000)
 #> [1] 2051.108
 ```
