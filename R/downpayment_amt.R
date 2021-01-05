@@ -13,6 +13,6 @@
 #'             downpayment_rate = 0.10)
 downpayment_amt <- function(home_price,
                         downpayment_rate = 0.10){
-  output <- home_price*(1-downpayment_rate)
+  output <- home_price*(downpayment_rate)
   return(output)
 }

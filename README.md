@@ -37,7 +37,7 @@ rates, downpayment rate, and home cost price.
 ``` r
 monthlypayment(mortgage_rate = 3,
                property_tax = 12,
-               downpayment_rate = 0.2,
+               downpayment_rate = .2,
                home_price = 450000)
 #> [1] 2051.108
 ```
@@ -68,7 +68,7 @@ downpayment rate
 ``` r
 downpayment_amt(home_price = 250000,
                 downpayment_rate = 0.10)
-#> [1] 225000
+#> [1] 25000
 ```
 
 ### mortgager::min\_income()
