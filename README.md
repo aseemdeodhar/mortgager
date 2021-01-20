@@ -98,7 +98,7 @@ downpayment_amt(home_price = 250000,
 
 ### mortgager::min\_income()
 
-*To be deprecated. Use reqd\_income() instead, and specify monthly cost
+*Deprecated. Use reqd\_income() instead, and specify monthly cost
 rate*
 
 calculates the minimum annual income required for total housing costs to
@@ -111,7 +111,7 @@ min_income(2000)
 
 ### mortgager::burd\_income()
 
-*To be deprecated. Use reqd\_income() instead, and specify monthly cost
+*Deprecated. Use reqd\_income() instead, and specify monthly cost
 rate*
 
 calculates the minimum annual income required for total housing costs to
