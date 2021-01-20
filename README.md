@@ -11,6 +11,30 @@ This package obtains various values such as monthly mortgage payment
 amounts, downpayment amounts, minimum income required for affordable
 home-ownership etc.
 
+The formula used for calculating monthly home-ownership payment amounts
+is based on a widely accepted monthly mortgage formula, which here is
+adapted from that seen on the Nerdwallet website.
+
+\[ M = P \times \frac {[ i \times ( 1 + i ) ^ n ]} {[ ( 1+ i ) ^ n - 1]}\]
+**Where:**
+
+  - **M** = Monthly mortgage amount
+  - **P** = Principal amount, ie total loan amount
+  - **i** = Monthly mortgage interest rate
+  - **n** = Number of payments across loan duration. (This is generally
+    assumed to be number of months. For example, a loan with a payback
+    period of 30 years, will have 360 payments in total)
+
+In addition to the monthly mortgage payment, there are other costs
+associated with home-ownership which are then added to calculate total
+home-ownership costs, namely:
+
+  - **PMI factor** – only for loans with a downpayment less than 20%,
+    assumed at 7.5% annually on the mortgage amount
+  - **Home-owners** insurance – assumed at $1000 annually
+  - **Condo fees** – applicable only to condominium sales, assumed at
+    $1000 annually
+
 ## Installation
 
 You can install the released version of mortgager with:
