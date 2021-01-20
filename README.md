@@ -16,6 +16,7 @@ is based on a widely accepted monthly mortgage formula, which here is
 adapted from that seen on the Nerdwallet website.
 
 \[ M = P \times \frac {[ i \times ( 1 + i ) ^ n ]} {[ ( 1+ i ) ^ n - 1]}\]
+
 **Where:**
 
   - **M** = Monthly mortgage amount
