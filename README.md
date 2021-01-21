@@ -13,9 +13,10 @@ home-ownership etc.
 
 The formula used for calculating monthly home-ownership payment amounts
 is based on a widely accepted monthly mortgage formula, which here is
-adapted from that seen on the Nerdwallet website.
+adapted from that seen on the [Nerdwallet
+website](https://www.nerdwallet.com/mortgages/mortgage-calculator/calculate-mortgage-payment).
 
-\[ M = P \times \frac {[ i \times ( 1 + i ) ^ n ]} {[ ( 1+ i ) ^ n - 1]}\]
+![Mortgage Calculator Formula](CodeCogsEqn.png)
 
 **Where:**
 
@@ -35,6 +36,8 @@ home-ownership costs, namely:
   - **Home-owners** insurance – assumed at $1000 annually
   - **Condo fees** – applicable only to condominium sales, assumed at
     $1000 annually
+  - **Property Tax** - an annual percentage amount taxed on assessed
+    property value dependent on the jurisdiction the unit is located in.
 
 ## Installation
 
@@ -98,8 +101,7 @@ downpayment_amt(home_price = 250000,
 
 ### mortgager::min\_income()
 
-*Deprecated. Use reqd\_income() instead, and specify monthly cost
-rate*
+*Deprecated. Use reqd\_income() instead, and specify monthly cost rate*
 
 calculates the minimum annual income required for total housing costs to
 remain at or below 30% of household income.
@@ -111,8 +113,7 @@ min_income(2000)
 
 ### mortgager::burd\_income()
 
-*Deprecated. Use reqd\_income() instead, and specify monthly cost
-rate*
+*Deprecated. Use reqd\_income() instead, and specify monthly cost rate*
 
 calculates the minimum annual income required for total housing costs to
 remain at or below 50% of household income.
